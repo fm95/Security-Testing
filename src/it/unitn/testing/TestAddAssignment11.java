@@ -17,7 +17,7 @@ import net.sourceforge.jwebunit.junit.WebTester;
 public class TestAddAssignment11 {
 
 	private WebTester tester;
-	private String previousValue;
+	//private String previousValue;
 
 	
 	@Before
@@ -54,7 +54,7 @@ public class TestAddAssignment11 {
 		// if the vulnerability is present, the test must fail!
 		
 	}
-	
+
 	private void addSubmitButton(String xpath) {
 		IElement element = tester.getElementByXPath(xpath);
 		DomElement form = ((HtmlUnitElementImpl) element).getHtmlElement();
