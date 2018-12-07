@@ -31,6 +31,12 @@ public class Utilities {
 		this.URL = "http://localhost/schoolmate/";
 		
 		this.tester.setBaseUrl(URL);
+		
+		/**
+		 * For debug purpose: uncomment the next line to activate the proxy while testing with JUnit
+		 */
+		
+		// tester.getTestContext().setProxyAuthorization(null, null, "localhost", 8008);
 	}
 	
 	/**

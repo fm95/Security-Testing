@@ -4,7 +4,7 @@ import org.junit.*;
 import net.sourceforge.jwebunit.junit.WebTester;
 import utility.Utilities;
 
-public class TestEditSemester85 {
+public class TestEditParent161 {
 
 	private WebTester tester;
 	private Utilities utl;
@@ -12,6 +12,7 @@ public class TestEditSemester85 {
 	@Before
 	public void prepare() {
 		tester = new WebTester();
+		//tester.getTestContext().setProxyAuthorization(null, null, "localhost", 8008);
 		utl = new Utilities(tester);
 	}
 	
@@ -20,19 +21,19 @@ public class TestEditSemester85 {
 		tester = utl.LoginAs("schoolmate", "schoolmate");
 		tester.assertMatch("Manage Classes");
 		
-		tester.clickLinkWithText("Semesters");
-		tester.assertMatch("Manage Semesters");
+		tester.clickLinkWithText("Parents");
+		tester.assertMatch("Manage Parents");
 		
-		tester.setWorkingForm("semesters");
-		tester.checkCheckbox("delete[]", "2");
+		tester.setWorkingForm("parents");
+		tester.checkCheckbox("delete[]", "1");
 
-		tester.setTextField("delete[]", "2 -- ' > <a href=\"https://www.unitn.it\">malicious delete</a> <br'");
-		tester.setTextField("page2", "13'> <a href=\"https://www.unitn.it\">malicious page2</a> <br'");
+		tester.setTextField("delete[]", "1--' > <a href=\"https://www.unitn.it\">malicious delete</a> <br '");
+		tester.setTextField("page2", "24'> <a href=\"https://www.unitn.it\">malicious page2</a> <br '");
 		tester.setTextField("page", "1'> <a href=\"https://www.unitn.it\">malicious page</a> <br'");
 		
-		utl.addSubmitButton("//form[@name='semesters']");
+		utl.addSubmitButton("//form[@name='parents']");
 		tester.submit();
-		tester.assertMatch("Edit Semester");
+		tester.assertMatch("Edit Parent");
 		
 		tester.assertLinkNotPresentWithText("malicious delete");
 		tester.assertLinkNotPresentWithText("malicious page2");
@@ -44,4 +45,5 @@ public class TestEditSemester85 {
 	}
 
 }
+
 

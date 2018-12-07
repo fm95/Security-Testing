@@ -28,7 +28,7 @@ public class TestManageAssignments207 {
 		tester.clickButtonWithText("Edit");
 		tester.assertMatch("Edit Class");
 		
-		previousValue = tester.getElementTextByXPath("//input[@name='title']");
+		previousValue = tester.getElementByXPath("html//input[@name='title']").getTextContent();
 		tester.setTextField("title", "<a href=\"#\">link</a>");
 		
 		tester.clickButtonWithText("Edit Class");
@@ -65,8 +65,7 @@ public class TestManageAssignments207 {
 		tester.clickButtonWithText("Edit");
 		tester.assertMatch("Edit Class");
 		
-		tester.setTextField("title", "SecTest");
-		//tester.setTextField("title", previousValue);
+		tester.setTextField("title", previousValue);
 		tester.clickButtonWithText("Edit Class");
 		tester.assertMatch("Manage Classes"); 
 	}

@@ -12,6 +12,7 @@ public class TestAddClass269 {
 	@Before
 	public void prepare() {
 		tester = new WebTester();
+		tester.getTestContext().setProxyAuthorization(null, null, "localhost", 8008);
 		utl = new Utilities(tester);
 	}
 	
@@ -22,19 +23,16 @@ public class TestAddClass269 {
 		
 		tester.clickButtonWithText("Add");
 		tester.assertMatch("Add New Class");
-		
-		tester.clickButtonWithText("Full Year");
-		tester.assertMatch("Add New Class");
-		
+
 		tester.setWorkingForm("addclass");
-		// Injection //
-		tester.setTextField("fullyear", "1'><a href=\"https://www.unitn.it\">malicious year</a><br'");
-		tester.setTextField("page2", "0'><a href=\"https://www.unitn.it\">malicious page2</a><br'");
-		tester.setTextField("page", "1'><a href=\"https://www.unitn.it\">malicious page</a><br'");
+
+		tester.setTextField("fullyear", "1'> <a href=\"https://www.unitn.it\">malicious year</a> <br '");
+		tester.setTextField("page2", "9'> <a href=\"https://www.unitn.it\">malicious page2</a> <br '");
+		tester.setTextField("page", "1'> <a href=\"https://www.unitn.it\">malicious page</a> <br '");
 
 		utl.addSubmitButton("//form[@name='addclass']");
 		tester.submit();
-		tester.assertMatch("Manage Classes");
+		tester.assertMatch("Add New Class");
 		
 		tester.assertLinkNotPresentWithText("malicious year");
 		tester.assertLinkNotPresentWithText("malicious page2");

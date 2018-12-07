@@ -4,7 +4,7 @@ import utility.*;
 import org.junit.*;
 import net.sourceforge.jwebunit.junit.*;
 
-public class TestPViewAnnouncements183 {
+public class TestPViewAssignments183 {
 	
 	private WebTester tester;
 	private Utilities utl;
@@ -13,6 +13,7 @@ public class TestPViewAnnouncements183 {
 	@Before
 	public void prepare() {
 		tester = new WebTester();
+		//tester.getTestContext().setProxyAuthorization(null, null, "localhost", 8008);
 		utl = new Utilities(tester);
 	}
 	
@@ -22,8 +23,8 @@ public class TestPViewAnnouncements183 {
 		tester = utl.LoginAs("fabioc", "parent");
 		tester.assertMatch("Students of Fabio Cannavaro");
 		
-		tester.clickLinkWithText("Luca Abate");
-		tester.assertMatch("Luca Abate's Classes");
+		tester.clickLinkWithText("Andrea Pirlo");
+		tester.assertMatch("Andrea Pirlo's Classes");
 		
 		tester.clickLinkWithText("SecTest");
 		tester.assertMatch("Class Settings");
@@ -33,19 +34,19 @@ public class TestPViewAnnouncements183 {
 		
 		tester.setWorkingForm("assignments");
 		
-		tester.setTextField("page2", "2'><a href=\"https://www.unitn.it\">malicious page2</a><br'");
-		tester.setTextField("onpage", "1--' /> <a href=\"https://www.unitn.it\">malicious onpage</a> <br'");
-		tester.setTextField("selectclass", "1--' /> <a href=\"https://www.unitn.it\">malicious selectclass</a> <br");
-		tester.setTextField("page", "5'><a href=\"https://www.unitn.it\">malicious page</a><br'");
+		tester.setTextField("page2", "2'> <a href=\"https://www.unitn.it\">malicious page2</a> <br '");
+		tester.setTextField("onpage", "1' > <a href=\"https://www.unitn.it\">malicious onpage</a> <br'");
+		tester.setTextField("selectclass", "1 -- ' -- > <a href=\"https://www.unitn.it\">malicious selectclass</a> <br '");
+		tester.setTextField("page", "5'> <a href=\"https://www.unitn.it\">malicious page</a> <br '");
 		
 		utl.addSubmitButton("//form[@name='assignments']");
 		tester.submit();
 		tester.assertMatch("View Assignments");
 		
-		//tester.assertLinkNotPresentWithText("malicious page2");
+		tester.assertLinkNotPresentWithText("malicious page2");
 		tester.assertLinkNotPresentWithText("malicious onpage");
 		tester.assertLinkNotPresentWithText("malicious selectclass");
-		//tester.assertLinkNotPresentWithText("malicious page");
+		tester.assertLinkNotPresentWithText("malicious page");
 		
 		tester.clickLinkWithText("Log Out");
 		tester.assertMatch("Today's Message");
