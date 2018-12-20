@@ -13,6 +13,7 @@ public class TestManageAssignments207 {
 	
 	private WebTester tester;
 	private Utilities utl;
+	String previousValue;
 	
 	
 	@Before
@@ -20,28 +21,64 @@ public class TestManageAssignments207 {
 		tester = new WebTester();
 		utl = new Utilities(tester);
 	}
-	
+
 	@Test
 	public void test() {
+		
+		tester = utl.LoginAs("schoolmate", "schoolmate");
+		tester.assertMatch("Manage Classes");
+		
+		tester.setWorkingForm("classes");
+		tester.checkCheckbox("delete[]", "1");
+		tester.clickButtonWithText("Edit");
+		tester.assertMatch("Edit Class");
+		
+		tester.setWorkingForm("editclass");	
+		
+		IElement element = tester.getElementByXPath("//input[@name='title']");
+		DomElement input = ((HtmlUnitElementImpl) element).getHtmlElement();
+		previousValue = input.getAttribute("value");
+		
+		tester.setTextField("title", "<a href=\"#\">k</a>");
+		tester.clickButtonWithText("Edit Class");
+		tester.assertMatch("Manage Classes"); 
+		
+		tester.clickLinkWithText("Log Out");
+		tester.assertMatch("Today's Message");
+				
+		////////////////////////////////////////////
+		
 		tester = utl.LoginAs("marior", "teacher");
 		tester.assertMatch("Mario Rossi's Classes");
 		
-		tester.clickLinkWithExactText("SecTest");
+		tester.clickLinkWithExactText("k");
 		tester.assertMatch("Class Settings");
 		
-		tester.setWorkingForm("teacher");
-		
-		tester.setHiddenField("page2", "2");
-		tester.setHiddenField("page", "2");
-		tester.setHiddenField("selectclass", "1 -- ' -- > <a href=\"https://unitn.it\">malicious selectclass</a> <br '");
-		
-		utl.addSubmitButton("//form[@name='teacher']");
-		tester.submit();
+		tester.clickLinkWithExactText("Assignments");
 		tester.assertMatch("Manage Assignments"); 
 		
-		tester.assertLinkNotPresentWithText("malicious selectclass");
+		tester.assertLinkNotPresentWithText("k");
 		
 		tester.clickLinkWithText("Log Out");
+		tester.assertMatch("Today's Message");
+	}
+	
+	
+	@After
+	public void cleanUp() {
+		tester = utl.LoginAs("schoolmate", "schoolmate");
+		tester.assertMatch("Manage Classes");
+		
+		tester.setWorkingForm("classes");
+		tester.checkCheckbox("delete[]", "1");
+		tester.clickButtonWithText("Edit");
+		tester.assertMatch("Edit Class");
+		tester.setWorkingForm("editclass");
+		tester.setTextField("title", previousValue);
+		tester.clickButtonWithText("Edit Class");
+		tester.assertMatch("Manage Classes"); 
+		
+		tester.clickLinkWithExactText("Log Out");
 		tester.assertMatch("Today's Message");
 	}
 	

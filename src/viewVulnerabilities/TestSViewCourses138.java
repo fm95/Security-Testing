@@ -28,7 +28,7 @@ public class TestSViewCourses138 {
 		tester.setWorkingForm("student");	
 		tester.setHiddenField("page2", "0'><a href=\"https://www.unitn.it\">malicious page2</a><br'");
 		tester.setHiddenField("page", "4'><a href=\"https://www.unitn.it\">malicious page</a><br'");
-		
+	
 		utl.addSubmitButton("//form[@name='student']");
 		tester.submit();
 		tester.assertMatch("Andrea Pirlo's Classes");

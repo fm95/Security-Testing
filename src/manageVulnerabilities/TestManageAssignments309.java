@@ -19,7 +19,7 @@ public class TestManageAssignments309 {
 	public void test() {
 		tester = utl.LoginAs("marior", "teacher");
 		tester.assertMatch("Mario Rossi's Classes");
-		
+	
 		tester.clickLinkWithExactText("SecTest");
 		tester.assertMatch("Class Settings");
 		

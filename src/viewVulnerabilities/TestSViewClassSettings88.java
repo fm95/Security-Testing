@@ -26,7 +26,7 @@ public class TestSViewClassSettings88 {
 		tester.assertMatch("Class Settings");
 				
 		tester.setWorkingForm("classes");
-		
+	
 		tester.setHiddenField("page2", "1'><a href=\"https://www.unitn.it\">malicious page2</a><br'");
 		tester.setHiddenField("page", "5'><a href=\"https://www.unitn.it\">malicious page</a><br'");
 		tester.setHiddenField("selectclass", "1--'><a href=\"https://www.unitn.it\">malicious selectclass</a><br'");

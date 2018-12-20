@@ -14,7 +14,7 @@ public class TestRegistration299 {
 		tester = new WebTester();
 		utl = new Utilities(tester);
 	}
-	
+
 	@Test
 	public void test() {
 		tester = utl.LoginAs("schoolmate", "schoolmate");

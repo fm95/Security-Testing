@@ -29,7 +29,7 @@ public class TestSViewGrades201 {
 		tester.assertMatch("View Grades");
 		
 		tester.setWorkingForm("grades");
-		
+	
 		tester.setHiddenField("selectclass", "1--' /> <a href=\"https://www.unitn.it\">malicious selectclass</a> <br");
 		tester.setHiddenField("page2", "3'><a href=\"https://www.unitn.it\">malicious page2</a><br");
 		tester.setHiddenField("page", "4'><a href=\"https://www.unitn.it\">malicious page</a><br");

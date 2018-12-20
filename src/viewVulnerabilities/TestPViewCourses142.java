@@ -26,7 +26,7 @@ public class TestPViewCourses142 {
 		tester.assertMatch("Andrea Pirlo's Classes");
 		
 		tester.setWorkingForm("student");
-		
+	
 		tester.setHiddenField("page2", "5'><a href=\"https://www.unitn.it\">malicious page2</a><br'");
 		tester.setHiddenField("page", "5'><a href=\"https://www.unitn.it\">malicious page</a><br'");
 		tester.setHiddenField("student", "1--' /> <a href=\"https://www.unitn.it\">malicious student</a> <br'");

@@ -4,8 +4,8 @@ import org.junit.*;
 import net.sourceforge.jwebunit.junit.*;
 import utility.Utilities;
 
-
-public class TestTodayMessage105 {
+	
+public class TestLogin105 {
 
 	private WebTester tester;
 	private Utilities utl;
@@ -26,20 +26,20 @@ public class TestTodayMessage105 {
 		
 		tester.clickLinkWithText("School");
 		tester.assertMatch("Manage School Information");
-		
 		previousValue = tester.getElementByXPath("html//textarea[@name='sitemessage']").getTextContent();
-		
-		tester.setTextField("sitemessage", "Hi <a href=\"https://unitn.it\">malicious sitemessage</a>");
+	
+		tester.setTextField("sitemessage", "original message <a href=\"https://www.unitn.it\">malicious sitemessage</a>");
 		tester.clickButtonWithText(" Update ");
+		tester.assertMatch("Manage School Information");
 
 		tester.clickLinkWithExactText("Log Out");
 		tester.assertMatch("Today's Message");
 		
 		tester.assertLinkNotPresentWithText("malicious sitemessage");
 		
-		tester.clickLinkWithText("Log Out");
-		tester.assertMatch("Today's Message");
+		// $page is not vulnerable before login in the application //
 	}
+	
 	
 	@After
 	public void cleanUp() {

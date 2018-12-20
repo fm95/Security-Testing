@@ -4,7 +4,7 @@ import utility.*;
 import org.junit.*;
 import net.sourceforge.jwebunit.junit.*;
 
-public class TestTViewStudent181 {
+public class TestTViewStudents181 {
 	
 	private WebTester tester;
 	private Utilities utl;
@@ -27,8 +27,9 @@ public class TestTViewStudent181 {
 		
 		tester.clickLinkWithText("Students");
 		tester.assertMatch("Students");
-				
+			
 		tester.setWorkingForm("teacher");	
+		
 		tester.setHiddenField("page2", "8'><a href=\"https://www.unitn.it\">malicious page2</a><br'");
 		tester.setHiddenField("page", "2'><a href=\"https://www.unitn.it\">malicious page</a><br'");
 		tester.setHiddenField("selectclass", "1--'><a href=\"https://www.unitn.it\">malicious selectclass</a><br'");

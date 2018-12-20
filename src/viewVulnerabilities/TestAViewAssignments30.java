@@ -22,7 +22,7 @@ public class TestAViewAssignments30 {
 		tester.getTestContext().setProxyAuthorization(null, null, "localhost", 8008);
 		utl = new Utilities(tester);
 	}
-		
+
 	@Test
 	public void test() {
 		tester = utl.LoginAs("schoolmate", "schoolmate");

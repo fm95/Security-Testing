@@ -15,7 +15,7 @@ public class TestSViewAnnouncements147 {
 		tester = new WebTester();
 		utl = new Utilities(tester);
 	}
-	
+
 	
 	@Test
 	public void test() {

@@ -27,12 +27,12 @@ public class TestAddUser18 {
 		tester.assertMatch("Add New User");
 		
 		tester.setWorkingForm("adduser");
-		tester.setHiddenField("page2", "10'><a href=\"https://www.unitn.it\">malicious page2</a><br'");
+		tester.setHiddenField("page2", "14'><a href=\"https://www.unitn.it\">malicious page2</a><br'");
 		tester.setHiddenField("page", "1'><a href=\"https://www.unitn.it\">malicious page</a><br'");
 
 		utl.addSubmitButton("//form[@name='adduser']");
 		tester.submit();
-		tester.assertMatch("Manage Users");
+		tester.assertMatch("Add New User");
 		
 		tester.assertLinkNotPresentWithText("malicious page2");
 		tester.assertLinkNotPresentWithText("malicious page");

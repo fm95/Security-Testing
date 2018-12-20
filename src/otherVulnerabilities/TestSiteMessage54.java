@@ -11,7 +11,7 @@ public class TestSiteMessage54 {
 	private Utilities utl;
 	private String previousValue;
 
-	
+
 	@Before
 	public void prepare() {
 		tester = new WebTester();
@@ -33,12 +33,9 @@ public class TestSiteMessage54 {
 
 		tester.clickLinkWithExactText("Log Out");
 		tester.assertMatch("Today's Message");
-		
+	
 		tester.assertLinkNotPresentWithText("malicious sitetext");
-		
-		tester.clickLinkWithText("Log Out");
-		tester.assertMatch("Today's Message");
-				
+			
 	}
 	
 	@After

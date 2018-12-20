@@ -37,7 +37,7 @@ public class TestAddAttendance13 {
 		
 		utl.addSubmitButton("//form[@name='addattendance']");
 		tester.submit();
-		tester.assertMatch("Attendance");
+		tester.assertMatch("Add New Attendance Record");
 		
 		tester.assertLinkNotPresentWithText("malicious semester");
 		tester.assertLinkNotPresentWithText("malicious student");

@@ -5,7 +5,7 @@ import org.junit.*;
 import net.sourceforge.jwebunit.junit.*;
 
 public class TestClassSettings89 {
-	
+
 	private WebTester tester;
 	private Utilities utl;
 	

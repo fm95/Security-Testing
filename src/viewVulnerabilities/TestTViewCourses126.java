@@ -32,7 +32,7 @@ public class TestTViewCourses126 {
 		utl.addSubmitButton("//form[@name='teacher']");
 		tester.submit();
 		tester.assertMatch("Mario Rossi's Classes");
-		
+	
 		tester.assertLinkNotPresentWithText("malicious page2");
 		tester.assertLinkNotPresentWithText("malicious page");
 		

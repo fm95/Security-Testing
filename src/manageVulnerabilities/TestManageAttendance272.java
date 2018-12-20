@@ -16,7 +16,7 @@ public class TestManageAttendance272 {
 		utl = new Utilities(tester);
 	}
 	
-	
+
 	@Test
 	public void test() {
 		tester = utl.LoginAs("schoolmate", "schoolmate");

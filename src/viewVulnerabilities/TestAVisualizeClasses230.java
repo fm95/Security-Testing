@@ -1,10 +1,10 @@
-package visualizeVulnerabilities;
+package viewVulnerabilities;
 
 import utility.*;
 import org.junit.*;
 import net.sourceforge.jwebunit.junit.*;
 
-public class TestVisualizeClasses230 {
+public class TestAVisualizeClasses230 {
 	
 	private WebTester tester;
 	private Utilities utl;
@@ -32,7 +32,7 @@ public class TestVisualizeClasses230 {
 		utl.addSubmitButton("//form[@name='classes']");
 		tester.submit();
 		tester.assertMatch("School Class Schedule");
-		
+	 
 		tester.assertLinkNotPresentWithText("malicious page2");
 		tester.assertLinkNotPresentWithText("malicious page");
 

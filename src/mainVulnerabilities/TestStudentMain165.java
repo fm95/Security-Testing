@@ -33,7 +33,7 @@ public class TestStudentMain165 {
 		tester.assertLinkNotPresentWithText("malicious page2");
 		tester.assertLinkNotPresentWithText("malicious page");
 		tester.assertLinkNotPresentWithText("malicious selectclass");
-		
+	
 		tester.clickLinkWithText("Log Out");
 		tester.assertMatch("Today's Message");
 		

@@ -26,7 +26,7 @@ public class TestManageTerms260 {
 		tester.assertMatch("Manage Terms");
 		
 		tester.setWorkingForm("terms");
-
+		
 		tester.setHiddenField("page2", "6'> <a href=\"https://www.unitn.it\">malicious page2</a> <br '");
 		tester.setHiddenField("onpage", "1'> <a href=\"https://www.unitn.it\">malicious onpage</a> <br '");
 		tester.setHiddenField("page", "1'> <a href=\"https://www.unitn.it\">malicious page</a> <br'");

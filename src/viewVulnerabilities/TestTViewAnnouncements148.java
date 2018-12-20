@@ -16,7 +16,7 @@ public class TestTViewAnnouncements148 {
 		utl = new Utilities(tester);
 	}
 	
-	
+
 	@Test
 	public void test() {
 		tester = utl.LoginAs("marior", "teacher");

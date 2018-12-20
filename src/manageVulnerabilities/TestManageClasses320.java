@@ -15,7 +15,7 @@ public class TestManageClasses320 {
 		tester = new WebTester();
 		utl = new Utilities(tester);
 	}
-	
+
 	
 	@Test
 	public void test() {

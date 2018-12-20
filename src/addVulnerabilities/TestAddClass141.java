@@ -24,12 +24,12 @@ public class TestAddClass141 {
 		tester.assertMatch("Add New Class");
 		
 		tester.setWorkingForm("addclass");
-		tester.setHiddenField("page2", "0' > <a href=\"https://www.unitn.it\">malicious page2</a> <br'");
+		tester.setHiddenField("page2", "9' > <a href=\"https://www.unitn.it\">malicious page2</a> <br'");
 		tester.setHiddenField("page", "1' > <a href=\"https://www.unitn.it\">malicious page</a> <br'");
 
 		utl.addSubmitButton("//form[@name='addclass']");
 		tester.submit();
-		tester.assertMatch("Manage Classes");
+		tester.assertMatch("Add New Class");
 		
 		tester.assertLinkNotPresentWithText("malicious page2");
 		tester.assertLinkNotPresentWithText("malicious page");

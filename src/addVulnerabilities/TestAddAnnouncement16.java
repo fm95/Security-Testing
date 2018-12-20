@@ -25,16 +25,13 @@ public class TestAddAnnouncement16 {
 		tester.clickLinkWithText("Announcements");
 		tester.assertMatch("Manage Announcements");
 		
-		tester.clickButtonWithText("Add");
-		tester.assertMatch("Add New Announcement");
-		
-		tester.setWorkingForm("addannouncement");
-		tester.setHiddenField("page2", "4'> <a href=\"https://www.unitn.it\">malicious page2</a> <br'");
+		tester.setWorkingForm("announcements");
+		tester.setHiddenField("page2", "18'> <a href=\"https://www.unitn.it\">malicious page2</a> <br'");
 		tester.setHiddenField("page", "1'> <a href=\"https://www.unitn.it\">malicious page</a> <br'");
 
-		utl.addSubmitButton("//form[@name='addannouncement']");
+		utl.addSubmitButton("//form[@name='announcements']");
 		tester.submit();
-		tester.assertMatch("Manage Announcements");
+		tester.assertMatch("Add New Announcement");
 		
 		tester.assertLinkNotPresentWithText("malicious page2");
 		tester.assertLinkNotPresentWithText("malicious page");

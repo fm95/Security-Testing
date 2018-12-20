@@ -37,7 +37,7 @@ public class TestPViewAssignments184 {
 		tester.setHiddenField("onpage", "1' > <a href=\"https://www.unitn.it\">malicious onpage</a> <br'");
 		tester.setHiddenField("selectclass", "1 -- ' -- > <a href=\"https://www.unitn.it\">malicious selectclass</a> <br '");
 		tester.setHiddenField("page", "5'> <a href=\"https://www.unitn.it\">malicious page</a> <br '");
-		
+	
 		utl.addSubmitButton("//form[@name='assignments']");
 		tester.submit();
 		tester.assertMatch("View Assignments");

@@ -29,12 +29,12 @@ public class TestAddParent93 {
 		tester.assertMatch("Add New Parent");
 		
 		tester.setWorkingForm("addparent");
-		tester.setHiddenField("page2", "22'><a href=\"https://www.unitn.it\">malicious page2</a><br'");
+		tester.setHiddenField("page2", "23'><a href=\"https://www.unitn.it\">malicious page2</a><br'");
 		tester.setHiddenField("page", "1'><a href=\"https://www.unitn.it\">malicious page</a><br'");
 
 		utl.addSubmitButton("//form[@name='addparent']");
 		tester.submit();
-		tester.assertMatch("Manage Parents");
+		tester.assertMatch("Add New Parent");
 		
 		tester.assertLinkNotPresentWithText("malicious page2");
 		tester.assertLinkNotPresentWithText("malicious page");

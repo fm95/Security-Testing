@@ -15,7 +15,7 @@ public class TestManageAnnouncements257 {
 		tester = new WebTester();
 		utl = new Utilities(tester);
 	}
-	
+
 	
 	@Test
 	public void test() {
@@ -38,7 +38,7 @@ public class TestManageAnnouncements257 {
 		tester.assertLinkNotPresentWithText("malicious page2");
 		tester.assertLinkNotPresentWithText("malicious onpage");
 		tester.assertLinkNotPresentWithText("malicious page");
-		
+	
 		tester.clickLinkWithText("Log Out");
 		tester.assertMatch("Today's Message");
 	}

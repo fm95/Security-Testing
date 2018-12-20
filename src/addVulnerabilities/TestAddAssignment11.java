@@ -30,11 +30,14 @@ public class TestAddAssignment11 {
 		
 		tester.setWorkingForm("teacher");
 		tester.setHiddenField("page2", "4'><a href=\"https://www.unitn.it\">malicious page2</a><br'");
+		tester.setHiddenField("selectclass", "'> <a href=\"https://www.unitn.it\">malicious selectclass</a> <br'");
 		
 		utl.addSubmitButton("//form[@name='teacher']");
 		tester.submit();
 		
 		tester.assertMatch("Add New Assignment");
+		
+		tester.assertLinkNotPresentWithText("malicious selectclass");
 		tester.assertLinkNotPresentWithText("malicious page2");
 		
 		tester.clickLinkWithText("Log Out");

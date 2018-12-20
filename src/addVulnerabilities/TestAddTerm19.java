@@ -27,12 +27,12 @@ public class TestAddTerm19 {
 		tester.assertMatch("Add New Term");
 		
 		tester.setWorkingForm("addterm");
-		tester.setHiddenField("page2", "6'><a href=\"https://www.unitn.it\">malicious page2</a><br'");
+		tester.setHiddenField("page2", "8'><a href=\"https://www.unitn.it\">malicious page2</a><br'");
 		tester.setHiddenField("page", "1'><a href=\"https://www.unitn.it\">malicious page</a><br'");
 
 		utl.addSubmitButton("//form[@name='addterm']");
 		tester.submit();
-		tester.assertMatch("Manage Terms");
+		tester.assertMatch("Add New Term");
 		
 		tester.assertLinkNotPresentWithText("malicious page2");
 		tester.assertLinkNotPresentWithText("malicious page");

@@ -19,7 +19,7 @@ public class TestGradeReport241 {
 	public void test() {
 		tester = utl.LoginAs("schoolmate", "schoolmate");
 		tester.assertMatch("Manage Classes");
-		
+	
 		tester.clickLinkWithText("Students");
 		tester.assertMatch("Manage Students");
 		

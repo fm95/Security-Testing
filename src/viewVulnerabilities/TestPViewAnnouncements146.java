@@ -32,7 +32,7 @@ public class TestPViewAnnouncements146 {
 		tester.assertMatch("View Announcements");
 		
 		tester.setWorkingForm("announcements");
-		
+	
 		tester.setHiddenField("page2", "4'><a href=\"https://www.unitn.it\">malicious page2</a><br'");
 		tester.setHiddenField("onpage", "1--' /> <a href=\"https://www.unitn.it\">malicious onpage</a> <br'");
 		tester.setHiddenField("page", "5'><a href=\"https://www.unitn.it\">malicious page</a><br'");

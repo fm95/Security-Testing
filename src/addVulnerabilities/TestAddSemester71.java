@@ -27,12 +27,12 @@ public class TestAddSemester71 {
 		tester.assertMatch("Add New Semester");
 		
 		tester.setWorkingForm("addsemester");
-		tester.setHiddenField("page2", "5'><a href=\"https://www.unitn.it\">malicious page2</a><br'");
+		tester.setHiddenField("page2", "7'><a href=\"https://www.unitn.it\">malicious page2</a><br'");
 		tester.setHiddenField("page", "1'><a href=\"https://www.unitn.it\">malicious page</a><br'");
 
 		utl.addSubmitButton("//form[@name='addsemester']");
 		tester.submit();
-		tester.assertMatch("Manage Semesters");
+		tester.assertMatch("Add New Semester");
 		
 		tester.assertLinkNotPresentWithText("malicious page2");
 		tester.assertLinkNotPresentWithText("malicious page");

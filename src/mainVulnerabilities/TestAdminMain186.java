@@ -24,7 +24,7 @@ public class TestAdminMain186 {
 
 		tester.setHiddenField("page2", "0'> <a href=\"https://www.unitn.it\">malicious page2</a> <br'");
 		tester.setHiddenField("page", "1'> <a href=\"https://www.unitn.it\">malicious page</a> <br'");
-		
+	
 		utl.addSubmitButton("//form[@name='classes']");
 		tester.submit();
 		tester.assertMatch("Manage Classes");

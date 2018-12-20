@@ -39,7 +39,7 @@ public class TestManageGrades316 {
 		tester.assertLinkNotPresentWithText("malicious page2");
 		tester.assertLinkNotPresentWithText("malicious selectclass");
 		tester.assertLinkNotPresentWithText("malicious page");
-		
+	
 		tester.clickLinkWithText("Log Out");
 		tester.assertMatch("Today's Message");
 	}

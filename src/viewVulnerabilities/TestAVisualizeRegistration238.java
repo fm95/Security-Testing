@@ -1,10 +1,10 @@
-package visualizeVulnerabilities;
+package viewVulnerabilities;
 
 import utility.*;
 import org.junit.*;
 import net.sourceforge.jwebunit.junit.*;
 
-public class TestVisualizeRegistration238 {
+public class TestAVisualizeRegistration238 {
 	
 	private WebTester tester;
 	private Utilities utl;

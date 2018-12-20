@@ -27,7 +27,7 @@ public class TestPViewGrades200 {
 		
 		tester.clickLinkWithText("SecTest");
 		tester.assertMatch("Class Settings");
-		
+	
 		tester.clickLinkWithText("Grades");
 		tester.assertMatch("View Grades");
 		
